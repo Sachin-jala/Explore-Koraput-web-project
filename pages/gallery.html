@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery • Explore Koraput</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/gallery.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <a class="logo" href="index.html" aria-label="Explore Koraput Home">🌍 <span>Explore Koraput</span></a>
+      <nav aria-label="primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="quotes.html">Travel Quotes</a></li>
+          <li><a class="active" href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="heading">
+      <h1 id="heading">Photo Gallery</h1>
+      <p>A glimpse into the beauty of Koraput — mountains, valleys, waterfalls, and culture.</p>
+    </section>
+
+    <section class="gallery-grid" id="gallery" aria-live="polite">
+      <!-- Example items -->
+      <div class="gallery-item">
+        <img src="images/deomali.jpg" alt="Deomali Hills, Koraput" loading="lazy">
+        <div class="caption">Deomali Hills</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/duduma.jpg" alt="Duduma Waterfall, Koraput" loading="lazy">
+        <div class="caption">Duduma Waterfall</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/kolab.jpg" alt="Kolab Reservoir" loading="lazy">
+        <div class="caption">Kolab Reservoir</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/kalyanmalai.jpg" alt="Green meadows of Kalyanmalai" loading="lazy">
+        <div class="caption">Kalyanmalai</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/panchapatamali.jpg" alt="Sunrise at Panchapatamali" loading="lazy">
+        <div class="caption">Panchapatamali</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/tribal-market.jpg" alt="Colorful tribal market" loading="lazy">
+        <div class="caption">Local Tribal Market</div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="yr"></span> Explore Koraput • Beauty captured in frames.</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

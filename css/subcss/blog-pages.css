@@ -1,0 +1,96 @@
+ :root {
+     --brand: #ff6b3d;
+     --bg: #faf7f2;
+     --card: #fff;
+     --muted: #6b7280;
+     --text: #14223a;
+     --radius: 16px;
+     --shadow: 0 10px 28px rgba(16, 24, 40, .08)
+ }
+
+ * {
+     box-sizing: border-box
+ }
+
+ body {
+     margin: 0;
+     font-family: Poppins, sans-serif;
+     background: var(--bg);
+     color: var(--text)
+ }
+
+ header {
+     background: #fff;
+     box-shadow: 0 1px 0 rgba(16, 24, 40, .06);
+     position: sticky;
+     top: 0
+ }
+
+ .nav-wrap {
+     max-width: 1200px;
+     margin: auto;
+     display: flex;
+     align-items: center;
+     gap: 18px;
+     padding: 14px 18px
+ }
+
+ nav ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     gap: 12px;
+     margin-left: auto
+ }
+
+ nav a {
+     padding: 8px 12px;
+     border-radius: 10px;
+     font-weight: 600;
+     color: var(--text);
+     text-decoration: none
+ }
+
+ nav a.active {
+     background: var(--brand);
+     color: #fff
+ }
+
+ .container {
+     max-width: 800px;
+     margin: 28px auto;
+     padding: 0 18px
+ }
+
+ article {
+     background: var(--card);
+     padding: 28px;
+     border-radius: var(--radius);
+     box-shadow: var(--shadow)
+ }
+
+ article img {
+     width: 100%;
+     border-radius: 12px;
+     margin-bottom: 20px
+ }
+
+ article h1 {
+     margin-top: 0
+ }
+
+ article p {
+     line-height: 1.7;
+     margin: 16px 0
+ }
+
+ .back-link {
+     display: inline-block;
+     margin-top: 24px;
+     padding: 10px 18px;
+     background: var(--brand);
+     color: #fff;
+     border-radius: 8px;
+     text-decoration: none
+ }
