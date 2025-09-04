@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog • Explore Koraput</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
   <header>
     <div class="nav-wrap">
-      <a class="logo" href="index.html">🌍 <span>Explore Koraput</span></a>
-      <nav aria-label="primary">
+      <a href="/index.html"><b>🌍 Explore Koraput</b></a>
+      <nav>
         <ul>
           <li><a href="/index.html">Home</a></li>
           <li><a href="destinations.html">Destinations</a></li>
@@ -30,56 +25,50 @@
   </header>
 
   <main class="container">
-    <section class="hero" aria-labelledby="heading">
-      <h1 id="heading">Travel Blog</h1>
-      <p>Stories, guides, and experiences from the hidden paradise of Koraput.</p>
-    </section>
-
-    <section class="blog-list" aria-live="polite">
-      <article class="blog-card">
-        <img src="images/deomali.jpg" alt="Deomali Hill Sunrise">
-        <div class="blog-content">
-          <h2>Sunrise Trek to Deomali Hills</h2>
-          <p>Experience the golden sunrise atop Odisha’s highest peak. A perfect spot for trekkers and nature lovers alike.</p>
-          <a href="#" class="read">Read More</a>
+    <h1>Travel Stories & Blogs</h1>
+    <div class="grid">
+      
+      <!-- Deomali -->
+      <div class="card">
+        <img src="images/deomali.jpg" alt="Deomali Hills">
+        <div class="card-body">
+          <h2>Sunrise Trek to Deomali</h2>
+          <p>Join us on a trek to Odisha’s highest peak, where sunrise paints the valleys in golden hues.</p>
+          <a href="/pages/subpage/blog-deomali.html" class="btn">Read More</a>
         </div>
-      </article>
+      </div>
 
-      <article class="blog-card">
+      <!-- Duduma -->
+      <div class="card">
         <img src="images/duduma.jpg" alt="Duduma Waterfall">
-        <div class="blog-content">
+        <div class="card-body">
           <h2>Discovering Duduma Falls</h2>
-          <p>A breathtaking 157m waterfall that marks the border of Odisha and Andhra Pradesh, surrounded by lush forests.</p>
-          <a href="#" class="read">Read More</a>
+          <p>Experience the roar of one of Odisha’s tallest waterfalls and the beauty of Machkund river valley.</p>
+          <a href="/pages/subpage/blog-duduma.html" class="btn">Read More</a>
         </div>
-      </article>
+      </div>
 
-      <article class="blog-card">
-        <img src="images/tribal-market.jpg" alt="Koraput Tribal Market">
-        <div class="blog-content">
+      <!-- Tribal Market -->
+      <div class="card">
+        <img src="images/tribal-market.jpg" alt="Tribal Market Koraput">
+        <div class="card-body">
           <h2>A Day at the Tribal Market</h2>
-          <p>Colorful attire, organic produce, and vibrant traditions make the tribal markets of Koraput a unique experience.</p>
-          <a href="#" class="read">Read More</a>
+          <p>Step into the vibrant weekly markets where local tribes bring colors, culture, and traditions alive.</p>
+          <a href="/pages/subpage/blog-tribal-market.html" class="btn">Read More</a>
         </div>
-      </article>
+      </div>
 
-      <article class="blog-card">
+      <!-- Kolab -->
+      <div class="card">
         <img src="images/kolab.jpg" alt="Kolab Reservoir">
-        <div class="blog-content">
+        <div class="card-body">
           <h2>Relaxing at Kolab Reservoir</h2>
-          <p>A serene lake surrounded by mountains, perfect for boating, birdwatching, and unwinding with nature.</p>
-          <a href="#" class="read">Read More</a>
+          <p>Take a break at Kolab Reservoir, a peaceful getaway surrounded by hills, forests, and blue waters.</p>
+          <a href="/pages/subpage/blog-kolab.html" class="btn">Read More</a>
         </div>
-      </article>
-    </section>
+      </div>
 
-    <footer>
-      <p>© <span id="yr"></span> Explore Koraput • Travel stories worth sharing.</p>
-    </footer>
+    </div>
   </main>
-
-  <script>
-    document.getElementById("yr").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
