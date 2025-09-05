@@ -36,41 +36,70 @@
       <p>A glimpse into the beauty of Koraput — mountains, valleys, waterfalls, and culture.</p>
     </section>
 
-    <section class="gallery-grid" id="gallery" aria-live="polite">
-      <!-- Example items -->
-      <div class="gallery-item">
-        <img src="images/deomali.jpg" alt="Deomali Hills, Koraput" loading="lazy">
-        <div class="caption">Deomali Hills</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/duduma.jpg" alt="Duduma Waterfall, Koraput" loading="lazy">
-        <div class="caption">Duduma Waterfall</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/kolab.jpg" alt="Kolab Reservoir" loading="lazy">
-        <div class="caption">Kolab Reservoir</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/kalyanmalai.jpg" alt="Green meadows of Kalyanmalai" loading="lazy">
-        <div class="caption">Kalyanmalai</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/panchapatamali.jpg" alt="Sunrise at Panchapatamali" loading="lazy">
-        <div class="caption">Panchapatamali</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/tribal-market.jpg" alt="Colorful tribal market" loading="lazy">
-        <div class="caption">Local Tribal Market</div>
-      </div>
-    </section>
+   <section class="gallery-grid" id="gallery" aria-live="polite">
+  <div class="gallery-item" id="deomali">
+    <img src="images/deomali.jpg" alt="Deomali Hills, Koraput" loading="lazy">
+    <div class="caption">Deomali Hills</div>
+  </div>
+
+  <div class="gallery-item" id="duduma">
+    <img src="images/duduma.jpg" alt="Duduma Waterfall, Koraput" loading="lazy">
+    <div class="caption">Duduma Waterfall</div>
+  </div>
+
+  <div class="gallery-item" id="kolab">
+    <img src="images/kolab.jpg" alt="Kolab Reservoir" loading="lazy">
+    <div class="caption">Kolab Reservoir</div>
+  </div>
+
+  <div class="gallery-item" id="kalyamali">
+    <img src="images/kalyanmalai.jpg" alt="Green meadows of Kalyanmalai" loading="lazy">
+    <div class="caption">Kalyamali</div>
+  </div>
+
+  <div class="gallery-item" id="panchapatamali">
+    <img src="images/panchapatamali.jpg" alt="Sunrise at Panchapatamali" loading="lazy">
+    <div class="caption">Panchapatamali</div>
+  </div>
+
+  <div class="gallery-item" id="onukudelli">
+    <img src="images/tribal-market.jpg" alt="Colorful tribal market" loading="lazy">
+    <div class="caption">Local Tribal Market</div>
+  </div>
+</section>
+
 
     <footer>
       <p>© <span id="yr"></span> Explore Koraput • Beauty captured in frames.</p>
     </footer>
   </main>
 
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+ <script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Show only the selected gallery item if hash exists
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    const items = document.querySelectorAll('.gallery-item');
+    items.forEach(item => {
+      item.style.display = (item.id === hash) ? '' : 'none';
+    });
+
+    // Add back button
+    const backBtn = document.createElement('div');
+    backBtn.innerHTML = '<a href="gallery.html" class="btn" style="display:block;text-align:center;margin:1rem;">← Back to Full Gallery</a>';
+    document.getElementById('gallery').before(backBtn);
+  }
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+  lightbox.addEventListener('click', () => lightbox.style.display = 'none');
+</script>
+
 </body>
 </html>

@@ -188,8 +188,7 @@
     <!-- Coffee -->
     <article class="card" data-type="culture view" data-name="coffee">
       <picture>
-        <img loading="lazy" data-src="/pic/coffee.png"
-          alt="Koraput coffee plantation rows with misty background">
+        <img loading="lazy" data-src="/pic/coffee.png" alt="Koraput coffee plantation rows with misty background">
       </picture>
       <div class="body">
         <div class="meta"><span class="tag">Coffee</span> <span>Plantations & Cafés</span></div>
@@ -206,12 +205,12 @@
     <!-- Hanuman Tample -->
     <article class="card" data-type="cave calture" data-name="hanuman tample">
       <picture>
-        <img loading="lazy" data-src="" alt="Hanuman Tample in Koraput Damanjodi 2nd Highest">
+        <img loading="lazy" data-src="/pic/bari.png" alt="Hanuman Tample in Koraput Damanjodi 2nd Highest">
       </picture>
       <div class="body">
-        <div class="meta"><span class="tag">Hanuman Tample</span></div>
+        <div class="meta"><span class="tag">Hanuman Tample</span> <span>108ft . Highest in odisha</span></div>
         <h3>Hanuman Vatika</h3>
-        <p>A 2nd highest hanuman statue in koraput damanjodi with the masive hight 108ft.</p>
+        <p>A highest hanuman statue in koraput damanjodi with the masive hight 108ft.</p>
         <div class="btn-row">
           <a class="btn primary" href="" target="_blank" rel="noopener">Open in Map</a>
           <a class="btn" herf="gallery.html#hanuman">See Photos</a>
@@ -222,12 +221,53 @@
     <!-- Jaganath Temple -->
     <article class="card" data-type="cave calture" data-name="jaganath temple">
       <picture>
-        <img class="lazy" data-src="" alt="Sabari shree khetro koraput">
+        <img class="lazy" data-src="/pic/jaganath.png" alt="Sabari shree khetro koraput">
       </picture>
       <div class="body">
-        <div class="meta"><span class="tag">Jaganath Temple</span></div>
+        <div class="meta"><span class="tag">Jaganath temple</span> <span>Csltural Heritaze</span></div>
+        <h3>Sabari Shree Khetra</h3>
+        <p>A caltural Heritaze . Lord jaganath prayz by trible sosites </p>
+        <div class="btn-row">
+          <a href="" class="btn primary" target="_blank" rel="noopener">Open in Map</a>
+          <a href="gallery.html#jaganath" class="btn">See Photos</a>
+        </div>
       </div>
     </article>
+
+    <!-- Bari Waterfall -->
+    <article class="card" data-type="waterfall view" data-name="bari">
+      <picture>
+        <img loading="lazy" data-src="/pic/hanuman.png" alt="Aerial view of Bari waterfall cascading into a gorge">
+      </picture>
+      <div class="body">
+        <div class="meta"><span class="tag">Waterfall</span> <span>Machkund River • Drone views</span></div>
+        <h3>Duduma Waterfall</h3>
+        <p>One of Odisha’s tallest falls, thundering down red rock cliffs into a misty canyon.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Open
+            in Maps</a>
+          <a class="btn" href="gallery.html#bari">See Photos</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Talamali -->
+    <article class="card" data-type="view mountain" data-name="talamali">
+      <picture>
+        <img loading="lazy" data-src="/pic/talamali.png" alt="Pastoral meadows with grazing cattle at talamali hills">
+      </picture>
+      <div class="body">
+        <div class="meta"><span class="tag">Meadows</span> <span>Wide green pastures</span></div>
+        <h3>Kalyamali Meadows</h3>
+        <p>Endless grasslands, soft slopes and pastoral frames—perfect for golden-hour picnics.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Open
+            in Maps</a>
+          <a class="btn" href="gallery.html#talamali">See Photos</a>
+        </div>
+      </div>
+    </article>
+
   </main>
 
   <footer>
@@ -275,12 +315,24 @@
       });
     });
 
-    // Back to top
-    const topBtn = document.getElementById('topBtn');
-    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    window.addEventListener('scroll', () => {
-      topBtn.style.display = window.scrollY > 600 ? 'inline-block' : 'none';
-    });
+
+    // Filter by URL parameter (for direct linking)
+    const urlParams = new URLSearchParams(window.location.search);
+    const place = urlParams.get('place');
+    if (place) {
+      cards.forEach(card => {
+        const show = card.dataset.name === place;
+        card.style.display = show ? '' : 'none';
+      });
+    }
+
+
+      // Back to top
+      const topBtn = document.getElementById('topBtn');
+      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      window.addEventListener('scroll', () => {
+        topBtn.style.display = window.scrollY > 600 ? 'inline-block' : 'none';
+      });
   </script>
 </body>
 
