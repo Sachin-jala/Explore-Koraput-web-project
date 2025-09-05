@@ -9,14 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="/css/gallery.css">
 </head>
 <body>
 
   <header>
     <div class="nav-wrap">
-      <a class="logo" href="/index.html" aria-label="Explore Koraput Home">🌍 <span>Explore Koraput</span></a>
+      <a class="logo" href="/index.html">🌍 <span>Explore Koraput</span></a>
       <nav aria-label="primary">
         <ul>
           <li><a href="/index.html">Home</a></li>
@@ -31,75 +30,112 @@
   </header>
 
   <main class="container">
-    <section class="hero" aria-labelledby="heading">
-      <h1 id="heading">Photo Gallery</h1>
+    <section class="hero">
+      <h1>Photo Gallery</h1>
       <p>A glimpse into the beauty of Koraput — mountains, valleys, waterfalls, and culture.</p>
     </section>
 
-   <section class="gallery-grid" id="gallery" aria-live="polite">
-  <div class="gallery-item" id="deomali">
-    <img src="images/deomali.jpg" alt="Deomali Hills, Koraput" loading="lazy">
-    <div class="caption">Deomali Hills</div>
-  </div>
+    <section class="gallery-grid" id="gallery">
+      <div class="gallery-item" id="deomali">
+        <img src="/pic/deomali.png" alt="Deomali Hills, Koraput" loading="lazy">
+        <div class="caption">Deomali Hills</div>
+      </div>
 
-  <div class="gallery-item" id="duduma">
-    <img src="images/duduma.jpg" alt="Duduma Waterfall, Koraput" loading="lazy">
-    <div class="caption">Duduma Waterfall</div>
-  </div>
+      <div class="gallery-item" id="duduma">
+        <img src="/pic/Duduma.png" alt="Duduma Waterfall, Koraput" loading="lazy">
+        <div class="caption">Duduma Waterfall</div>
+      </div>
 
-  <div class="gallery-item" id="kolab">
-    <img src="images/kolab.jpg" alt="Kolab Reservoir" loading="lazy">
-    <div class="caption">Kolab Reservoir</div>
-  </div>
+      <div class="gallery-item" id="kolab">
+        <img src="/pic/kolab.png" alt="Kolab Reservoir" loading="lazy">
+        <div class="caption">Kolab Reservoir</div>
+      </div>
 
-  <div class="gallery-item" id="kalyamali">
-    <img src="images/kalyanmalai.jpg" alt="Green meadows of Kalyanmalai" loading="lazy">
-    <div class="caption">Kalyamali</div>
-  </div>
+      <div class="gallery-item" id="kalyamali">
+        <img src="/pic/kaliyamali.png" alt="Green meadows of Kalyanmalai" loading="lazy">
+        <div class="caption">Kalyamali Hill</div>
+      </div>
 
-  <div class="gallery-item" id="panchapatamali">
-    <img src="images/panchapatamali.jpg" alt="Sunrise at Panchapatamali" loading="lazy">
-    <div class="caption">Panchapatamali</div>
-  </div>
+      <div class="gallery-item" id="panchapatamali">
+        <img src="/pic/mines-01.png" alt="Sunrise at Panchapatamali" loading="lazy">
+        <div class="caption">Panchapatamali Hill</div>
+      </div>
 
-  <div class="gallery-item" id="onukudelli">
-    <img src="images/tribal-market.jpg" alt="Colorful tribal market" loading="lazy">
-    <div class="caption">Local Tribal Market</div>
-  </div>
-</section>
+      <div class="gallery-item" id="onukudelli">
+        <img src="/pic/trable.png" alt="Colorful tribal market" loading="lazy">
+        <div class="caption">Local Tribal Market</div>
+      </div>
 
+      <div class="gallery-item" id="coffee">
+        <img src="/pic/coffee.png" alt="Beatiful Cofee plantaition" loading="lazy">
+        <div class="caption">Coffee Trails</div>
+      </div>
+
+      <div class="gallery-item" id="panchapatamali">
+        <img src="/pic/mines-01.png" alt="Beatiful Mountain Over The Cloud" loading="lazy">
+        <div class="caption">Panchapatamali Hill</div>
+      </div>
+
+      <div class="gallery-item" id="hanuman">
+        <img src="/pic/bari.png" alt="Highest Hanuman Statue">
+        <div class="caption">Hanuman Vatika Temple</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/pic/jaganath.png" alt="Sabari Shree Khetra" loading="lazy">
+        <div class="caption">Sabari shree Khetra</div>
+      </div>
+
+      <div class="gallery-item" id="gupteswar" loading="lazy">
+        <img src="/pic/gupteswer.png" alt="Gupteswar Tample">
+        <div class="caption">Gupteswar Temple</div>
+      </div>
+
+      <div class="gallery-item" id="bari">
+        <img src="/pic/hanuman.png" alt="Bari Waterfall" loading="lazy">
+        <div class="caption">Bari Waterfall</div>
+      </div>
+    </section>
 
     <footer>
       <p>© <span id="yr"></span> Explore Koraput • Beauty captured in frames.</p>
+      <p>Developed by Sachin</p>
     </footer>
   </main>
 
- <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
 
-  // Show only the selected gallery item if hash exists
-  const hash = window.location.hash.substring(1);
-  if (hash) {
-    const items = document.querySelectorAll('.gallery-item');
-    items.forEach(item => {
-      item.style.display = (item.id === hash) ? '' : 'none';
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Show only selected gallery section via hash
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        const match = (item.id === hash || item.classList.contains(hash));
+        item.style.display = match ? '' : 'none';
+      });
+
+      // Back button
+      const backBtn = document.createElement('div');
+      backBtn.innerHTML = '<a href="gallery.html" class="btn">← Back to Full Gallery</a>';
+      document.getElementById('gallery').before(backBtn);
+    }
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
     });
-
-    // Add back button
-    const backBtn = document.createElement('div');
-    backBtn.innerHTML = '<a href="gallery.html" class="btn" style="display:block;text-align:center;margin:1rem;">← Back to Full Gallery</a>';
-    document.getElementById('gallery').before(backBtn);
-  }
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('img');
-  document.querySelectorAll('.gallery-item img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    });
-  });
-  lightbox.addEventListener('click', () => lightbox.style.display = 'none');
-</script>
-
+    lightbox.addEventListener('click', () => lightbox.style.display = 'none');
+  </script>
 </body>
 </html>
