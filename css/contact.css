@@ -57,6 +57,33 @@ nav a.active {
     background: var(--brand);
     color: #fff;
 }
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 220px;
+    text-align: right;
+    padding: 20px;
+    box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  #menu-toggle:checked+.menu-icon+.nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    color: #333;
+  }
+}
 
 .container {
     max-width: 800px;

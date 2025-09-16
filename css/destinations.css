@@ -29,6 +29,33 @@
     .nav ul{margin:0 0 0 auto;padding:0;display:flex;gap:20px;list-style:none}
     .nav a{padding:8px 12px;border-radius:12px;color:var(--dark);font-weight:600}
     .nav a.active, .nav a:hover{background:var(--chip);color:#000}
+    #menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 220px;
+    text-align: right;
+    padding: 20px;
+    box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  #menu-toggle:checked+.menu-icon+.nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    color: #333;
+  }
+}
 
     /* Hero */
     .hero{
