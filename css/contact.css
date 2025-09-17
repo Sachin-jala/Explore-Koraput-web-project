@@ -61,7 +61,20 @@ nav a.active {
   display: none;
 }
 
+
+/* Hide menu icon on desktop */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
+  nav ul {
+    margin-left: 0;
+  }
+
   .nav-links {
     position: absolute;
     top: 70px;
@@ -81,7 +94,6 @@ nav a.active {
 
   .menu-icon {
     display: block;
-    color: #333;
   }
 }
 

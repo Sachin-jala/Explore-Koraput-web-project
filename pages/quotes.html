@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -11,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/quotes.css">
 </head>
+
 <body>
 
   <header>
@@ -22,7 +24,7 @@
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
-        <ul>
+        <ul class="nav-links">
           <li><a href="/index.html">Home</a></li>
           <li><a href="destinations.html">Destinations</a></li>
           <li><a class="active" href="quotes.html">Travel Quotes</a></li>
@@ -31,6 +33,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+
     </div>
   </header>
 
@@ -53,11 +56,16 @@
       </div>
 
       <div class="search" role="search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 19a8 8 0 1 1 5.293-14.293A8 8 0 0 1 11 19z" stroke="#ff6b3d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M11 19a8 8 0 1 1 5.293-14.293A8 8 0 0 1 11 19z" stroke="#ff6b3d" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
         <input id="q" placeholder="Search quotes or author…" aria-label="Search quotes" />
       </div>
 
-      <button id="randomBtn" style="margin-left:auto;background:var(--brand);color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer">Surprise me</button>
+      <button id="randomBtn"
+        style="margin-left:auto;background:var(--brand);color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer">Surprise
+        me</button>
     </div>
 
     <section class="grid" id="quotesGrid" aria-live="polite">
@@ -66,25 +74,26 @@
 
     <footer>
       <p>© <span id="yr"></span> Explore Koraput • Share a quote with friends.</p>
-      <p>Devlop By Sachin</p>
+      <p>Develop By Sachin</p>
+      <p>explorekoraput@gmail.com</p>
     </footer>
   </main>
 
   <script>
     // Data: short curated quotes (editable)
     const QUOTES = [
-      {text: "Not all those who wander are lost.", author: "J.R.R. Tolkien", tags:["adventure","inspiration"]},
-      {text: "The clearest way into the Universe is through a forest wilderness.", author: "John Muir", tags:["nature"]},
-      {text: "To travel is to discover that everyone is wrong about other countries.", author: "Aldous Huxley", tags:["culture","inspiration"]},
-      {text: "Take only memories, leave only footprints.", author: "Chief Seattle", tags:["nature","inspiration"]},
-      {text: "Jobs fill your pocket, adventures fill your soul.", author: "Unknown", tags:["adventure"]},
-      {text: "Wherever you go becomes a part of you somehow.", author: "Anita Desai", tags:["inspiration","nature"]},
-      {text: "Mountains are the beginning and the end of all natural scenery.", author: "John Ruskin", tags:["nature","adventure"]},
-      {text: "Travel far enough, you meet yourself.", author: "David Mitchell", tags:["inspiration"]},
-      {text: "Everywhere is within walking distance if you have the time.", author: "Steven Wright", tags:["adventure"]},
-      {text: "Culture is the widening of the mind and of the spirit.", author: "Jawaharlal Nehru", tags:["culture","inspiration"]},
-      {text: "The best view comes after the hardest climb.", author: "Unknown", tags:["adventure","nature"]},
-      {text: "Listen to the waterfall, and you will find peace.", author: "Unknown", tags:["nature","inspiration"]}
+      { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien", tags: ["adventure", "inspiration"] },
+      { text: "The clearest way into the Universe is through a forest wilderness.", author: "John Muir", tags: ["nature"] },
+      { text: "To travel is to discover that everyone is wrong about other countries.", author: "Aldous Huxley", tags: ["culture", "inspiration"] },
+      { text: "Take only memories, leave only footprints.", author: "Chief Seattle", tags: ["nature", "inspiration"] },
+      { text: "Jobs fill your pocket, adventures fill your soul.", author: "Unknown", tags: ["adventure"] },
+      { text: "Wherever you go becomes a part of you somehow.", author: "Anita Desai", tags: ["inspiration", "nature"] },
+      { text: "Mountains are the beginning and the end of all natural scenery.", author: "John Ruskin", tags: ["nature", "adventure"] },
+      { text: "Travel far enough, you meet yourself.", author: "David Mitchell", tags: ["inspiration"] },
+      { text: "Everywhere is within walking distance if you have the time.", author: "Steven Wright", tags: ["adventure"] },
+      { text: "Culture is the widening of the mind and of the spirit.", author: "Jawaharlal Nehru", tags: ["culture", "inspiration"] },
+      { text: "The best view comes after the hardest climb.", author: "Unknown", tags: ["adventure", "nature"] },
+      { text: "Listen to the waterfall, and you will find peace.", author: "Unknown", tags: ["nature", "inspiration"] }
     ];
 
     // Helpers
@@ -94,34 +103,34 @@
     const qInput = document.getElementById('q');
     const randomBtn = document.getElementById('randomBtn');
 
-    function createQuoteCard(qObj, index){
+    function createQuoteCard(qObj, index) {
       const el = document.createElement('article');
       el.className = 'quote';
       el.dataset.index = index;
       el.innerHTML = `
         <div class="text">“${escapeHtml(qObj.text)}”</div>
         <div class="author">— ${escapeHtml(qObj.author || 'Unknown')}</div>
-        <div class="tag-row">${qObj.tags.map(t=>`<span class="tag">${escapeHtml(capitalize(t))}</span>`).join('')}</div>
+        <div class="tag-row">${qObj.tags.map(t => `<span class="tag">${escapeHtml(capitalize(t))}</span>`).join('')}</div>
       `;
       return el;
     }
 
-    function renderList(list){
+    function renderList(list) {
       grid.innerHTML = '';
-      if(!list.length){
+      if (!list.length) {
         grid.innerHTML = `<div style="grid-column:1/-1;padding:24px;border-radius:12px;background:#fff;box-shadow:var(--shadow);text-align:center;color:var(--muted)">No quotes found — try another search or filter.</div>`;
         return;
       }
       const frag = document.createDocumentFragment();
-      list.forEach((q,i)=>frag.appendChild(createQuoteCard(q,i)));
+      list.forEach((q, i) => frag.appendChild(createQuoteCard(q, i)));
       grid.appendChild(frag);
     }
 
     // Filtering & searching
-    function applyFilters(){
+    function applyFilters() {
       const filter = filterSelect.value;
       const q = qInput.value.trim().toLowerCase();
-      const filtered = QUOTES.filter(item=>{
+      const filtered = QUOTES.filter(item => {
         const matchesFilter = filter === 'all' || item.tags.includes(filter);
         const matchesQuery = !q || item.text.toLowerCase().includes(q) || (item.author && item.author.toLowerCase().includes(q));
         return matchesFilter && matchesQuery;
@@ -130,26 +139,26 @@
     }
 
     // Random quote highlight
-    function showRandom(){
-      const idx = Math.floor(Math.random()*QUOTES.length);
+    function showRandom() {
+      const idx = Math.floor(Math.random() * QUOTES.length);
       const q = QUOTES[idx];
       renderList([q]);
       // scroll into view for small screens
-      window.scrollTo({top: document.querySelector('.container').offsetTop, behavior:'smooth'});
+      window.scrollTo({ top: document.querySelector('.container').offsetTop, behavior: 'smooth' });
     }
 
     // Utilities
-    function escapeHtml(s){ return String(s).replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
-    function capitalize(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+    function escapeHtml(s) { return String(s).replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m])); }
+    function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
     // Event listeners
     filterSelect.addEventListener('change', applyFilters);
-    qInput.addEventListener('input', ()=>{ setTimeout(applyFilters, 0); });
+    qInput.addEventListener('input', () => { setTimeout(applyFilters, 0); });
     randomBtn.addEventListener('click', showRandom);
 
     // Keyboard: quick focus search ("/")
-    window.addEventListener('keydown', e=>{
-      if(e.key === '/' && document.activeElement !== qInput){
+    window.addEventListener('keydown', e => {
+      if (e.key === '/' && document.activeElement !== qInput) {
         e.preventDefault(); qInput.focus();
       }
     });
@@ -158,4 +167,5 @@
     renderList(QUOTES);
   </script>
 </body>
+
 </html>

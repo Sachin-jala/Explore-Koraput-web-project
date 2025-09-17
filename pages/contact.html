@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact • Explore Koraput</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="/css/contact.css">
 </head>
+
 <body>
   <header>
     <div class="nav-wrap">
       <a href="/index.html"><b>🌍 Explore Koraput</b></a>
-      <!-- Hamburger Menu -->
+      <nav aria-label="primary">
+
+        <!-- Hamburger Menu -->
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
-      <nav>
-        <ul>
+        <ul class="nav-links">
           <li><a href="/index.html">Home</a></li>
           <li><a href="destinations.html">Destinations</a></li>
           <li><a href="quotes.html">Travel Quotes</a></li>
@@ -24,28 +27,32 @@
           <li><a href="blog.html">Blog</a></li>
           <li><a class="active" href="contact.html">Contact</a></li>
         </ul>
+      </nav>
     </div>
   </header>
 
   <main class="container">
     <h1>Contact Us</h1>
     <div class="card">
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
+      <form id="contact-form">
+        <input type="text" name="from_name" placeholder="Your Name" required>
+        <input type="email" name="from_email" placeholder="Your Email" required>
+        <input type="text" name="phone" placeholder="Your Phone (optional)">
         <textarea name="message" placeholder="Your Message..." required></textarea>
         <button type="submit">Send Message</button>
       </form>
+
       <div class="info">
         <p>📍 Koraput, Odisha, India</p>
-        <p>📧 hello@explorekoraput.com</p>
-        <p>📞 +91 98765 43210</p>
+        <p>📧 explorekoraput29.netlify.app</p>
+        <p>📞 +91 81440 07409</p>
       </div>
     </div>
   </main>
 
   <!-- EmailJS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script type="module" src="/pages/contact.jss"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="module" src="/pages/contact.jss"></script>
 </body>
+
 </html>

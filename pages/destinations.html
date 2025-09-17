@@ -24,13 +24,13 @@
         <span style="font-size:1.3rem">🌍</span> <span>Explore Koraput</span>
       </a>
 
-      <!-- Hamburger Menu -->
+      <nav aria-label="primary">
+
+        <!-- Hamburger Menu -->
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
-
-      <nav aria-label="primary">
-        <ul>
+        <ul class="nav-links">
           <li><a href="/index.html">Home</a></li>
           <li><a class="active" href="destinations.html">Destinations</a></li>
           <li><a href="quotes.html">Travel Quotes</a></li>
@@ -39,6 +39,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+
 
       <div class="srch" role="search">
         <input id="search" type="search" placeholder="Search destinations…" aria-label="Search destinations" />
@@ -217,7 +218,8 @@
         <h3>Hanuman Vatika</h3>
         <p>A highest hanuman statue in koraput damanjodi with the masive hight 108ft.</p>
         <div class="btn-row">
-          <a class="btn primary" href="https://maps.app.goo.gl/L2pRct9vLq4TtchTA" target="_blank" rel="noopener">Open in Map</a>
+          <a class="btn primary" href="https://maps.app.goo.gl/L2pRct9vLq4TtchTA" target="_blank" rel="noopener">Open in
+            Map</a>
           <a class="btn" herf="gallery.html#hanuman">See Photos</a>
         </div>
       </div>
@@ -233,7 +235,8 @@
         <h3>Sabari Shree Khetra</h3>
         <p>A caltural Heritaze . Lord jaganath prayz by trible sosites </p>
         <div class="btn-row">
-          <a href="https://maps.app.goo.gl/VYRHgqZG5tgMaKYB8" class="btn primary" target="_blank" rel="noopener">Open in Map</a>
+          <a href="https://maps.app.goo.gl/VYRHgqZG5tgMaKYB8" class="btn primary" target="_blank" rel="noopener">Open in
+            Map</a>
           <a href="gallery.html#jaganath" class="btn">See Photos</a>
         </div>
       </div>
@@ -333,12 +336,12 @@
     }
 
 
-      // Back to top
-      const topBtn = document.getElementById('topBtn');
-      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-      window.addEventListener('scroll', () => {
-        topBtn.style.display = window.scrollY > 600 ? 'inline-block' : 'none';
-      });
+    // Back to top
+    const topBtn = document.getElementById('topBtn');
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', () => {
+      topBtn.style.display = window.scrollY > 600 ? 'inline-block' : 'none';
+    });
   </script>
 </body>
 
