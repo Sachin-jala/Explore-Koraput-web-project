@@ -1,10 +1,12 @@
 # Explore Koraput
 
-> Explore. Dream. Discover.  
-> A small travel site showcasing Koraput district — destinations, waterfalls, peaks and travel tips.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Explore%20Koraput-blue?style=for-the-badge&logo=netlify)](https://explorekoraput29.netlify.app/)
 
-**Live demo:** https://explorekoraput29.netlify.app/  
-(Developed by Sachin — contact: explorekoraput29@gmail.com) :contentReference[oaicite:1]{index=1}
+<p align="center">
+  <a href="https://explorekoraput29.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-green?style=for-the-badge&logo=firefox" alt="Live Demo">
+  </a>
+</p>
 
 ---
 
@@ -57,15 +59,7 @@ Explore Koraput is a static site built to highlight Koraput's natural attraction
   <!-- add more figures -->
 </div>
 
-# Explore Koraput
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Explore%20Koraput-blue?style=for-the-badge&logo=netlify)](https://explorekoraput29.netlify.app/)
-
-<p align="center">
-  <a href="https://explorekoraput29.netlify.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-green?style=for-the-badge&logo=firefox" alt="Live Demo">
-  </a>
-</p>
 
 
 
